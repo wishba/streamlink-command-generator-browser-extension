@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     title = title.trim().replace(/\s+/g, ' ');
 
+    title = title.replace(/^\(\d+\)\s*/, '');
+
     title = title.replace(/\s-\sYouTube$/, '');
 
     document.getElementById("pageTitle").textContent = title;
