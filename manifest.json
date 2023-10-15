@@ -1,9 +1,9 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "Streamlink Command",
   "description": "Extension that can generate streamlink command so you can paste it in cmd",
   "version": "1.0",
-  "action": {
+  "browser_action": {
     "default_popup": "index.html",
     "default_icon": "icon.png"
   },
