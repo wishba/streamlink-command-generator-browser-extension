@@ -1,11 +1,10 @@
 {
   "manifest_version": 2,
-  "name": "Streamlink Command",
-  "description": "Extension that can generate streamlink command so you can paste it in cmd",
-  "version": "1.0",
+  "name": "Streamlink Command generator",
+  "description": "For easy copy paste into the command prompt",
+  "version": "1.1",
   "browser_action": {
-    "default_popup": "index.html",
-    "default_icon": "icon.png"
+    "default_popup": "index.html"
   },
   "permissions": [
     "activeTab"

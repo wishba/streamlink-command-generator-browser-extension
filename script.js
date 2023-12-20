@@ -3,20 +3,15 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentTab = tabs[0];
     let title = currentTab.title;
 
-    title = title.replace(/[\/\\:*?"<>|]/g, ' ');
-
-    title = title.trim().replace(/\s+/g, ' ');
-
-    title = title.replace(/^\(\d+\)\s*/, '');
-
-    title = title.replace(/\s-\sYouTube$/, '');
+    title = title.replace(/^\(\d+\)\s*/, "");
+    title = title.replace(/[<>:"|?*\/\\]/g, "");
 
     document.getElementById("pageTitle").textContent = title;
 
     let copyButton = document.getElementById("copyButton");
 
     copyButton.addEventListener("click", function () {
-      let streamlinkCommand = `streamlink ${currentTab.url} best -o "D:\\download stream\\${title}.avi"`;
+      let streamlinkCommand = `streamlink -o ${currentTab.url} best "D:\\Downloads Stream\\${title}.mp4"`;
 
       let tempInput = document.createElement("input");
       tempInput.value = streamlinkCommand;
