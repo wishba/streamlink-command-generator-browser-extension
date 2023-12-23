@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let copyButton = document.getElementById("copyButton");
 
     copyButton.addEventListener("click", function () {
-      let streamlinkCommand = `streamlink -o ${currentTab.url} best "D:\\Downloads Stream\\${title}.mp4"`;
+      let streamlinkCommand = `streamlink ${currentTab.url} best -o "D:\\Downloads Stream\\${title}.mp4"`;
 
       let tempInput = document.createElement("input");
       tempInput.value = streamlinkCommand;
