@@ -8,6 +8,6 @@ Download `Streamlink Command Generator` on [releases page](https://github.com/wi
 
 Also you need to have streamlink installed but if you haven't you can go to [streamlink releases](https://github.com/streamlink/windows-builds/releases)
 
-For using it all you need to do is just click Streamlink Command Generator icon on your dashboard, click copy, and paste the command on command prompt (cmd)
+To use this tool all you need to do is just click Streamlink Command Generator icon on your dashboard, click copy, paste it on command prompt (cmd), and press enter to run the command
 
 You can find the recorded file on `D:\Downloads`
