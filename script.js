@@ -1,32 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
-  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    let currentTab = tabs[0];
-    let title = currentTab.title;
+  browser.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    let title = tabs[0].title
+    title = title.replace(/^\(\d+\)\s*/, "").replace(/[<>:"|?*\/\\]/g, "")
+    document.getElementById("title").innerText = title
 
-    title = title.replace(/^\(\d+\)\s*/, "");
-    title = title.replace(/[<>:"|?*\/\\]/g, "");
+    let copyBtn = document.getElementById("generate")
+    copyBtn.addEventListener("click", (e) => {
+      e.preventDefault()
 
-    document.getElementById("pageTitle").textContent = title;
+      let resolution = document.getElementById("resolution").value
+      let location = document.getElementById("location").value
 
-    let copyButton = document.getElementById("copyButton");
+      let command = `streamlink ${tabs[0].url} ${resolution} -o "${location}${title}.avi"`
 
-    copyButton.addEventListener("click", function () {
-      let streamlinkCommand = `streamlink ${currentTab.url} best -o "D:\\Downloads\\${title}.avi"`;
+      navigator.clipboard.writeText(command)
 
-      let tempInput = document.createElement("input");
-      tempInput.value = streamlinkCommand;
-
-      document.body.appendChild(tempInput);
-
-      tempInput.select();
-      document.execCommand("copy");
-
-      document.body.removeChild(tempInput);
-
-      copyButton.textContent = "Copied!";
+      copyBtn.innerText = "Copied!";
       setTimeout(function () {
-        copyButton.textContent = "Copy Command";
+        copyBtn.innerText = "Copy Command";
       }, 2000);
-    });
-  });
-});
+
+      document.getElementById("command").innerHTML = `Generated Command: <br> ${command}`
+    })
+  })
+}) 
