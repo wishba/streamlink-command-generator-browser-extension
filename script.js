@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let resolution = document.getElementById("resolution").value
       let location = document.getElementById("location").value
 
-      let command = `streamlink ${tabs[0].url} ${resolution} -o "${location}${title}.avi"`
+      let command = `streamlink ${tabs[0].url} ${resolution} -o "${location}${title}.ts"`
 
       navigator.clipboard.writeText(command)
 
