@@ -1,6 +1,6 @@
 # Streamlink Command Generator Firefox Add-on
 
-### [Download](https://addons.mozilla.org/en-US/firefox/addon/streamlink-command-generator/)
+### [Download for firefox](https://addons.mozilla.org/en-US/firefox/addon/streamlink-command-generator/)
 
 This is a tool to record youtube video or live stream
 
